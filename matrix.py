@@ -52,11 +52,14 @@ def transpose(a, n, m):
                b.append(a[i+j*m])
     return b 
 
+def det(a):
+     return a[0]*a[3]-a[1]*a[2]
+
 n1 = [1, 3, 1, 1, 0, 0]
 n2 = [0, 0, 5, 7, 5, 0]
 n3 = [1, 2, 3, 0, -6, 7]
+n4 = [4, 7, 2, 6]
+print(det(n4))
 display_matrix(mult_matrix(a, b, n, m), 2, 2)
 display_matrix(add_matrix(n1, n2), 2, 3)
 display_matrix(transpose(n3, 2, 3), 3, 2)
-    
-    
