@@ -32,7 +32,31 @@ def mult_matrix(a, b, n, m):
             i = 0
         y+=1
     return c
-display_matrix(mult_matrix(a, b, n, m), 2, 2)
 
+def add_matrix(a, b):
+    c = []
+    for i in range(len(a)):
+            c.append(a[i]+b[i])
+    return c
+
+def sub_matrix(a, b):
+    c = []
+    for i in range(len(a)):
+            c.append(a[i]-b[i])
+    return c
+
+def transpose(a, n, m):
+    b = []
+    for i in range(m):
+            for j in range(n):
+               b.append(a[i+j*m])
+    return b 
+
+n1 = [1, 3, 1, 1, 0, 0]
+n2 = [0, 0, 5, 7, 5, 0]
+n3 = [1, 2, 3, 0, -6, 7]
+display_matrix(mult_matrix(a, b, n, m), 2, 2)
+display_matrix(add_matrix(n1, n2), 2, 3)
+display_matrix(transpose(n3, 2, 3), 3, 2)
     
     
