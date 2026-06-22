@@ -16,7 +16,7 @@ def display_matrix(matrix, n, m):
 def mult_matrix(a, b, n, m):
     c = []
     y = 0
-    while(y < n):
+    while(y < m):
         sum = 0
         j = 0
         i = 0
@@ -55,11 +55,21 @@ def transpose(a, n, m):
 def det(a):
      return a[0]*a[3]-a[1]*a[2]
 
+
+def systems_of_linear_equation(co_matrix, result_matrix):
+    d = det(co_matrix)
+    inverse_matrix = [co_matrix[3]/d, -co_matrix[1]/d, -co_matrix[2]/d, co_matrix[0]/d]
+    display_matrix(inverse_matrix, 2, 2)
+    final_matrix = mult_matrix(inverse_matrix, result_matrix, 1, 2)
+    return final_matrix
+
 n1 = [1, 3, 1, 1, 0, 0]
 n2 = [0, 0, 5, 7, 5, 0]
 n3 = [1, 2, 3, 0, -6, 7]
 n4 = [4, 7, 2, 6]
-print(det(n4))
-display_matrix(mult_matrix(a, b, n, m), 2, 2)
-display_matrix(add_matrix(n1, n2), 2, 3)
-display_matrix(transpose(n3, 2, 3), 3, 2)
+# print(det(n4))
+# display_matrix(mult_matrix(a, b, n, m), 2, 2)
+# display_matrix(add_matrix(n1, n2), 2, 3)
+# display_matrix(transpose(n3, 2, 3), 3, 2)
+
+display_matrix(systems_of_linear_equation([2, 7, 5, -4], [34, -1]), 2, 1)
